@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const BACKEND_URL = "https://YOUR_BACKEND_URL_HERE";
+const BACKEND_URL = "http://10.118.232.248:8000";
 
 const SelfHelp = () => {
   const [query, setQuery] = useState("");

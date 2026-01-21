@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const BACKEND_URL = "http://127.0.0.1:8000";
+const BACKEND_URL = "http://10.118.232.248:8000";
 
 interface Message {
   id: number;

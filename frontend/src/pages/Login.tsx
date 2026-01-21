@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BACKEND_URL = "https://YOUR_BACKEND_URL_HERE";
+const BACKEND_URL = "http://10.118.232.248:8000";
 
 const Login = () => {
 const [username, setUsername] = useState("");
