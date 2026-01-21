@@ -289,4 +289,13 @@ def get_garden(user_id: int):
         "plants": plants,
         "flowers": flowers,
         "trees": trees
+
     }
+import uvicorn
+
+if __name__ == "__main__":
+    uvicorn.run(
+        "backend.main:app",
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 8000))
+    )
