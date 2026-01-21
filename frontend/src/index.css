@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Growth Garden Color Palette */
+    --background: 88 35% 67%; /* #AFC78C - main background green */
+    --foreground: 117 25% 25%;
+    
+    --card: 52 50% 85%; /* #ECE8C5 - calming session/garden bg */
+    --card-foreground: 117 25% 20%;
+    
+    --popover: 52 50% 85%;
+    --popover-foreground: 117 25% 20%;
+    
+    --primary: 117 17% 51%; /* #6E956C - tree green */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 52 50% 85%; /* #ECE8C5 */
+    --secondary-foreground: 117 25% 20%;
+    
+    --muted: 88 25% 75%;
+    --muted-foreground: 117 20% 35%;
+    
+    --accent: 325 88% 94%; /* #FDE4F2 - flower pink */
+    --accent-foreground: 117 25% 20%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 117 17% 45%;
+    --input: 52 50% 90%;
+    --ring: 117 17% 51%;
+    
+    --radius: 1rem;
+    
+    /* Custom Colors */
+    --calm-bg: 52 50% 85%; /* #ECE8C5 */
+    --calm-circle: 162 29% 62%; /* #80BAA7 */
+    --tree-green: 117 17% 51%; /* #6E956C */
+    --bg-green: 88 35% 67%; /* #AFC78C */
+    --flower-pink: 325 88% 94%; /* #FDE4F2 */
+    --garden-bg: 52 50% 85%; /* #ECE8C5 */
+    
+    /* Sidebar */
+    --sidebar-background: 88 35% 67%;
+    --sidebar-foreground: 117 25% 20%;
+    --sidebar-primary: 117 17% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 52 50% 85%;
+    --sidebar-accent-foreground: 117 25% 20%;
+    --sidebar-border: 117 17% 45%;
+    --sidebar-ring: 162 29% 62%;
+  }
+
+  .dark {
+    --background: 117 25% 15%;
+    --foreground: 88 35% 85%;
+    --card: 117 20% 20%;
+    --card-foreground: 88 35% 85%;
+    --popover: 117 20% 20%;
+    --popover-foreground: 88 35% 85%;
+    --primary: 162 29% 62%;
+    --primary-foreground: 117 25% 15%;
+    --secondary: 117 20% 25%;
+    --secondary-foreground: 88 35% 85%;
+    --muted: 117 15% 25%;
+    --muted-foreground: 88 20% 65%;
+    --accent: 325 60% 75%;
+    --accent-foreground: 117 25% 15%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 117 15% 30%;
+    --input: 117 15% 30%;
+    --ring: 162 29% 62%;
+    --sidebar-background: 117 25% 15%;
+    --sidebar-foreground: 88 35% 85%;
+    --sidebar-primary: 162 29% 62%;
+    --sidebar-primary-foreground: 117 25% 15%;
+    --sidebar-accent: 117 20% 25%;
+    --sidebar-accent-foreground: 88 35% 85%;
+    --sidebar-border: 117 15% 30%;
+    --sidebar-ring: 162 29% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-nunito;
+  }
+}
+
+/* Custom Animations */
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) translateX(100px) rotate(720deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(162 29% 62% / 0.4), 0 0 40px hsl(162 29% 62% / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(162 29% 62% / 0.6), 0 0 80px hsl(162 29% 62% / 0.4);
+  }
+}
+
+@keyframes breath {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes emoji-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes petal-bloom {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes chatbot-expand {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-sway-delay {
+  animation: sway 4.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+  transform-origin: bottom center;
+}
+
+.animate-fall {
+  animation: fall linear forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-grow {
+  animation: grow 0.6s ease-out forwards;
+  transform-origin: bottom center;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-breath {
+  animation: breath 4s ease-in-out infinite;
+}
+
+.animate-emoji-scroll {
+  animation: emoji-scroll 3s linear infinite;
+}
+
+.animate-petal-bloom {
+  animation: petal-bloom 0.5s ease-out forwards;
+}
+
+.animate-chatbot-expand {
+  animation: chatbot-expand 0.2s ease-out forwards;
+}
